@@ -1,3 +1,69 @@
+# TaskFlow Pro - Advanced Kanban Task Management
+
+> Professional task management application built with React - Advanced version of basic Todo App
+
+## 🚀 Live Demo
+- **TaskFlow Pro (v2)**: [https://melyha.github.io/TaskFlow-Pro/](https://melyha.github.io/TaskFlow-Pro-Kanban/)
+- **Original Todo App (v1)**: [https://melyha.github.io/To-Do-React-App/](https://melyha.github.io/To-Do-React-App/)
+
+## 🛠 Development Progress
+
+### Phase 1: Foundation & Setup 
+- [x] Project setup with Vite + React
+- [ ] Design system and color tokens
+- [ ] Basic component structure
+- [ ] Storage utilities and data models
+- [ ] README and documentation
+
+### Phase 2: Core Board Features 
+- [ ] Board and Column components
+- [ ] TaskCard component
+- [ ] Add/delete tasks functionality
+- [ ] Column management
+- [ ] Data persistence
+- [ ] Drag and drop
+
+### Phase 3: Enhanced Task Features 
+- [ ] Task detail modals
+- [ ] Due dates and priorities
+- [ ] Color-coded labels
+- [ ] Search and filtering
+- [ ] Board templates
+
+### Phase 4: Polish & Advanced Features 
+- [ ] Responsive design
+- [ ] Loading states
+- [ ] API integrations
+- [ ] Data export/import
+- [ ] Keyboard shortcuts
+
+
+## 🎯 Getting Started
+```bash
+# Clone the repository
+git clone https://github.com/melyha/TaskFlow-Pro-kanban.git
+cd TaskFlow-Pro-kanban
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Deploy to GitHub Pages
+npm run deploy
+```
+
+## 🎨 Design System
+Coming soon...
+
+## 📝 License
+MIT License
+
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
