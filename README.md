@@ -3,7 +3,7 @@
 > Professional task management application built with React - Advanced version of basic Todo App
 
 ## 🚀 Live Demo
-- **TaskFlow Pro (v2)**: [https://melyha.github.io/TaskFlow-Pro/](https://melyha.github.io/TaskFlow-Pro-Kanban/)
+- **TaskFlow Pro (v2)**: [https://melyha.github.io/TaskFlow-Pro-Kanban/](https://melyha.github.io/TaskFlow-Pro-Kanban/)
 - **Original Todo App (v1)**: [https://melyha.github.io/To-Do-React-App/](https://melyha.github.io/To-Do-React-App/)
 
 ## 🛠 Development Progress
