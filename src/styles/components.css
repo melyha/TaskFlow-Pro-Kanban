@@ -1,0 +1,126 @@
+/* Base Component Styles - TaskFlow Pro */
+
+/* === BUTTONS === */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-md);
+  font-weight: var(--font-medium);
+  font-size: 0.875rem;
+  transition: all var(--transition-normal);
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.btn-primary {
+  background-color: var(--primary-500);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-600);
+}
+
+.btn-secondary {
+  background-color: white;
+  color: var(--gray-700);
+  border-color: var(--border-medium);
+}
+
+.btn-secondary:hover {
+  background-color: var(--gray-50);
+}
+
+/* === CARDS === */
+.card {
+  background-color: var(--bg-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+/* === INPUTS === */
+.input {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  transition: border-color var(--transition-normal);
+}
+
+.input:focus {
+  border-color: var(--primary-500);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+/* === PRIORITY INDICATORS === */
+.priority-high {
+  color: var(--priority-high);
+}
+
+.priority-medium {
+  color: var(--priority-medium);
+}
+
+.priority-low {
+  color: var(--priority-low);
+}
+
+.priority-none {
+  color: var(--priority-none);
+}
+
+/* === STATUS COLORS === */
+.status-success {
+  color: var(--success-700);
+  background-color: var(--success-50);
+}
+
+.status-warning {
+  color: var(--warning-700);
+  background-color: var(--warning-50);
+}
+
+.status-error {
+  color: var(--error-700);
+  background-color: var(--error-50);
+}
+
+/* === LAYOUT UTILITIES === */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-4);
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.gap-2 {
+  gap: var(--space-2);
+}
+
+.gap-4 {
+  gap: var(--space-4);
+}
