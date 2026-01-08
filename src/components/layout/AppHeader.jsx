@@ -1,7 +1,29 @@
 import React from 'react';
 
-export function AppHeader() {
+export function AppHeader({ onReset }) {
 
+   // Sample function for Analytics - shows task stats
+  const handleAnalytics = () => {
+    alert(`📊 TaskFlow Pro Analytics
+
+📋 Total Tasks: 4
+✅ Completed: 1  
+🚧 In Progress: 1
+📌 To Do: 2
+
+🔥 High Priority: 2
+🟡 Medium Priority: 1
+🟢 Low Priority: 1
+
+📈 This Week: +3 tasks created`);
+  };
+
+  const handleSettings = () => {
+    const action = window.confirm('⚙️ Settings Options:\n\nOK = Reset to default data\nCancel = Close');
+    if (action && onReset) {
+      onReset();
+    }
+  };
     
   return (
     <header style={{
@@ -32,10 +54,10 @@ export function AppHeader() {
         </div>
         
         <nav className="flex items-center gap-4">
-          <button className="btn btn-secondary" style={{ fontSize: '0.8rem' }}>
+          <button className="btn btn-secondary" style={{ fontSize: '0.8rem' }} onClick={handleAnalytics}>
             📊 Analytics
           </button>
-          <button className="btn btn-primary" style={{ fontSize: '0.8rem' }}>
+          <button className="btn btn-primary" style={{ fontSize: '0.8rem' }} onClick={handleSettings}>
             ⚙️ Settings
           </button>
         </nav>

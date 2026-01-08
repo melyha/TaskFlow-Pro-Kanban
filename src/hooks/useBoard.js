@@ -345,6 +345,29 @@ export const useBoard = () => {
     }
   }, []);
 
+  const resetToDefault = useCallback(() => {
+  try {
+    const defaultBoard = getDefaultBoardData();
+    const initialData = {
+      boards: [defaultBoard],
+      currentBoardId: defaultBoard.id,
+      settings: {
+        theme: 'default',
+        autoSave: true
+      }
+    };
+    
+    setBoardData(initialData);
+    writeStorage(initialData);
+    console.log('Reset to default data:', initialData);
+    setError(null);
+  } catch (err) {
+    setError('Failed to reset data');
+    console.error('Error resetting data:', err);
+  }
+}, []);
+
+
   // Return the hook interface
   return {
     // State
@@ -366,6 +389,7 @@ export const useBoard = () => {
     
     // Utility functions
     clearError,
-    refreshData
+    refreshData,
+    resetToDefault
   };
 };

@@ -1,7 +1,7 @@
 import React from 'react';
 import { AppHeader } from './AppHeader';
 
-export function AppLayout({ children }) {
+export function AppLayout({ children, onReset }) {
   return (
     <div style={{ 
       minHeight: '100vh',
@@ -9,7 +9,7 @@ export function AppLayout({ children }) {
       display: 'flex',
       flexDirection: 'column'
     }}>
-      <AppHeader />
+      <AppHeader onReset={onReset} />
       <main style={{ 
         flex: 1,
         padding: '0', // Remove padding here since Board handles it

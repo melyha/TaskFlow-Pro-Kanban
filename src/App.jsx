@@ -20,7 +20,8 @@ function App() {
     addColumn,
     updateColumn,
     deleteColumn,
-    clearError
+    clearError,
+    resetToDefault,
   } = useBoard();
 
   // Local UI state for forms
@@ -161,7 +162,7 @@ function App() {
   }
 
   return (
-    <AppLayout>
+    <AppLayout onReset={resetToDefault}>
       {/* Error notification */}
       {error && (
         <div style={{
@@ -211,7 +212,7 @@ function App() {
             <TaskForm
               onSubmit={handleTaskSubmit}
               onCancel={handleTaskCancel}
-              initialData={editingTask}
+              initialData={editingTask || {}}  // ← Add || {} to handle null
             />
           </div>
         </div>

@@ -3,9 +3,9 @@ import { ColumnHeader } from './ColumnHeader';
 import { TaskCard } from '../tasks/TaskCard';
 import { AddTaskButton } from '../tasks/AddTaskButton';
 
-export function Column({ title, tasks = [], onAddTask, onTaskAction, onColumnAction }) {
+export function Column({ id, title, tasks = [], onAddTask, onTaskAction, onColumnAction }) {
   const handleAddTask = () => {
-    
+     console.log('Column handleAddTask called with id:', id); // Debug log
     if (onAddTask) {
       onAddTask(id);
     }
