@@ -7,8 +7,11 @@ export function TaskForm({ onSubmit, onCancel, initialData = {} }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!title.trim()) return;
-    
+    if (!title.trim()) {
+      alert('Please enter a task title');
+      return;
+    }
+
     onSubmit({
       title: title.trim(),
       description: description.trim(),
@@ -16,9 +19,13 @@ export function TaskForm({ onSubmit, onCancel, initialData = {} }) {
       id: initialData.id || Date.now(),
     });
     
+
+     // Reset form only if creating new task
+      if (!initialData.id) {
     setTitle('');
     setDescription('');
     setPriority('none');
+      }
   };
 
   return (

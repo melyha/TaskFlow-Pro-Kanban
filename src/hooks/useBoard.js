@@ -51,10 +51,14 @@ export const useBoard = () => {
   // Save data to storage whenever boardData changes
   useEffect(() => {
     if (boardData && !loading) {
+          console.log('Saving data to localStorage:', boardData); // Debug log
       const saveSuccess = writeStorage(boardData);
       if (!saveSuccess) {
         setError('Failed to save data');
       }
+      else {
+      console.log('Data saved successfully!'); // Debug log
+    }
     }
   }, [boardData, loading]);
 

@@ -5,6 +5,7 @@ import { AddTaskButton } from '../tasks/AddTaskButton';
 
 export function Column({ title, tasks = [], onAddTask, onTaskAction, onColumnAction }) {
   const handleAddTask = () => {
+    
     if (onAddTask) {
       onAddTask(id);
     }
