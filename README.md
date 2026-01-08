@@ -10,7 +10,7 @@
 
 ### Phase 1: Foundation & Setup 
 - [x] Project setup with Vite + React
-- [ ] Design system and color tokens
+- [x] Design system and color tokens
 - [ ] Basic component structure
 - [ ] Storage utilities and data models
 - [ ] README and documentation
