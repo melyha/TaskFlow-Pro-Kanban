@@ -1,6 +1,21 @@
 import React from 'react';
 
 export function ColumnHeader({ title, taskCount, onAddTask, onRename, onDelete }) {
+   const handleMoreOptions = () => {
+    const action = window.confirm(
+      `Options for "${title}" column:\n\nClick OK to rename, Cancel to delete`
+    );
+    
+    if (action) {
+      if (onRename) onRename();
+    } else {
+      if (onDelete && window.confirm('Are you sure you want to delete this column?')) {
+        onDelete();
+      }
+    }
+  };
+
+
   return (
     <div style={{
       display: 'flex',
@@ -19,8 +34,8 @@ export function ColumnHeader({ title, taskCount, onAddTask, onRename, onDelete }
           {title}
         </h3>
         <span style={{
-          background: 'var(--gray-100)',
-          color: 'var(--gray-600)',
+          background: taskCount > 0 ? 'var(--primary-100)' :  'var(--gray-100)',
+          color: taskCount > 0 ? 'var(--primary-700)' : 'var(--gray-600)',
           padding: 'var(--space-1) var(--space-2)',
           borderRadius: 'var(--radius-full)',
           fontSize: '0.75rem',
@@ -59,9 +74,12 @@ export function ColumnHeader({ title, taskCount, onAddTask, onRename, onDelete }
             cursor: 'pointer',
             padding: 'var(--space-1)',
             borderRadius: 'var(--radius-sm)',
-            fontSize: '1rem'
+            fontSize: '1rem',
+            transition: 'color var(--transition-fast)'
           }}
-          title="More options"
+          onMouseOver={(e) => e.target.style.color = 'var(--gray-600)'}
+          onMouseOut={(e) => e.target.style.color = 'var(--gray-400)'}
+          title="Column options"
         >
           ⋯
         </button>

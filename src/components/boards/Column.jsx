@@ -3,10 +3,22 @@ import { ColumnHeader } from './ColumnHeader';
 import { TaskCard } from '../tasks/TaskCard';
 import { AddTaskButton } from '../tasks/AddTaskButton';
 
-export function Column({ title, tasks = [], onAddTask, onTaskAction }) {
+export function Column({ title, tasks = [], onAddTask, onTaskAction, onColumnAction }) {
   const handleAddTask = () => {
     if (onAddTask) {
-      onAddTask(title);
+      onAddTask(id);
+    }
+  };
+
+  const handleRename = () => {
+    if (onColumnAction) {
+      onColumnAction('rename', id, { title });
+    }
+  };
+
+  const handleDelete = () => {
+    if (onColumnAction) {
+      onColumnAction('delete', id, { title });
     }
   };
 
@@ -27,6 +39,8 @@ export function Column({ title, tasks = [], onAddTask, onTaskAction }) {
         title={title}
         taskCount={tasks.length}
         onAddTask={handleAddTask}
+        onRename={handleRename}
+        onDelete={handleDelete}
       />
       
       <div style={{
@@ -44,6 +58,19 @@ export function Column({ title, tasks = [], onAddTask, onTaskAction }) {
             onAction={onTaskAction}
           />
         ))}
+
+        {tasks.length === 0 && (
+          <div style={{
+            textAlign: 'center',
+            color: 'var(--gray-400)',
+            fontSize: '0.8rem',
+            padding: 'var(--space-4)',
+            fontStyle: 'italic'
+          }}>
+            No tasks yet
+          </div>
+        )}
+        
         
         <AddTaskButton onClick={handleAddTask} />
       </div>
